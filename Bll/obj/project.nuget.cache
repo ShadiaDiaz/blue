@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "dkwsUSDk2xjNdqtj6y4+85xR7E5reBrwRUyW5cfNq9+xZtPi8NLhotXfUoFS5lkA6O5zK3F6WHqrPOLR59Gshg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\xshad\\Desktop\\ParcialSegundoCOrte\\Bll\\Bll.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\xshad\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\xshad\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
