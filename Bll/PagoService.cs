@@ -16,16 +16,16 @@ namespace Bll
             _context = context;
         }
 
-        public GuardarPagoResponse Guardar(Persona persona)
+        public GuardarPagoResponse Guardar(Pago pago)
         {
             string mensaje = "";
             try
             {
-                if (_context.Personas.Find(persona.Identificacion) == null)
+                if (_context.Pago.Find(pago.null) == null)
                 {
                          _context.Pago.Add(pago);
                          _context.SaveChanges();
-                        mensaje = "Error: Persona/Entidad No se encuentra registrado. ";
+                        mensaje = "Error: Ya se encuentra registrado este pago ";
                         return new GuardarPagoResponse(mensaje, "NO");
                 }
                 else

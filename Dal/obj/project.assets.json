@@ -1719,6 +1719,19 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "Entity/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "System.ComponentModel.Annotations": "4.7.0"
+        },
+        "compile": {
+          "bin/placeholder/Entity.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Entity.dll": {}
+        }
       }
     }
   },
@@ -6246,10 +6259,16 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "Entity/1.0.0": {
+      "type": "project",
+      "path": "../Entity/Entity.csproj",
+      "msbuildProject": "../Entity/Entity.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "Entity >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 3.1.9",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.9",
       "NETStandard.Library >= 2.0.3",
@@ -6264,11 +6283,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\xshad\\Desktop\\ParcialSegundoCOrte\\Dal\\Dal.csproj",
+      "projectUniqueName": "C:\\Users\\xshad\\Desktop\\ParcialSegundoCOrte\\Dal\\Dal.csproj",
       "projectName": "Dal",
-      "projectPath": "c:\\Users\\xshad\\Desktop\\ParcialSegundoCOrte\\Dal\\Dal.csproj",
+      "projectPath": "C:\\Users\\xshad\\Desktop\\ParcialSegundoCOrte\\Dal\\Dal.csproj",
       "packagesPath": "C:\\Users\\xshad\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\xshad\\Desktop\\ParcialSegundoCOrte\\Dal\\obj\\",
+      "outputPath": "C:\\Users\\xshad\\Desktop\\ParcialSegundoCOrte\\Dal\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -6286,7 +6305,11 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\xshad\\Desktop\\ParcialSegundoCOrte\\Entity\\Entity.csproj": {
+              "projectPath": "C:\\Users\\xshad\\Desktop\\ParcialSegundoCOrte\\Entity\\Entity.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

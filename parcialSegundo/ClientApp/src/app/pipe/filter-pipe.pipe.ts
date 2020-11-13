@@ -1,12 +1,15 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({
-  name: 'filterPipe'
-})
-export class FilterPipePipe implements PipeTransform {
+import { Pago } from '../Parcial/models/pago';
 
-  transform(value: any, ...args: any[]): any {
-    return null;
+@Pipe({
+  name: 'filtroPago'
+})
+export class FiltroPagoPipe implements PipeTransform {
+
+  transform(pagos: Pago[], searchType: string): unknown {
+    if(searchType == null) return pagos;
+    return pagos.filter(d => d.tipoPago.toLowerCase().indexOf(searchType.toLowerCase())!==-1);
   }
 
 }

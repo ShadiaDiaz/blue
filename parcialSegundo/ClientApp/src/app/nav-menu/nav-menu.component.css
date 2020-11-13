@@ -1,18 +1,64 @@
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
-}
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
-html {
-  font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
+/*-------------------------------- END ----*/
+    #body-row {
+        margin-left: 0;
+        margin-right: 0;
+    }
 
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-}
+    #sidebar-container {
+        min-height: 150vh;
+        background-color: #9fdd9a;
+        padding: 0;
+        /* flex: unset; */
+    }
+    
+    .sidebar-expanded {
+        width: 230px;
+    }
+    
+    .sidebar-collapsed {
+        /*width: 60px;*/
+        width: 100px;
+    }
+
+    /* ----------| Menu item*/    
+    #sidebar-container .list-group a {
+        height: 80px;
+        color: white;
+    }
+
+    /* ----------| Submenu item*/    
+    #sidebar-container .list-group li.list-group-item {
+        background-color:   #8cca88;
+    }
+    
+    #sidebar-container .list-group .sidebar-submenu a {
+        height: 100px;
+        padding-left: 30px;
+    }
+    
+    .sidebar-submenu {
+        font-size: 0.9rem;
+    }
+
+    /* ----------| Separators */    
+    .sidebar-separator-title {
+        background-color: #a5e4a1;
+        height: 35px;
+    }
+    
+    .sidebar-separator {
+        background-color: #b1e6ad;
+        height: 25px;
+    }
+    
+    .logo-separator {
+        background-color:  #9fdd9a;
+        height: 60px;
+    }
+    
+    a.bg-dark {
+        background-color: #9fdd9a !important;
+    }
+

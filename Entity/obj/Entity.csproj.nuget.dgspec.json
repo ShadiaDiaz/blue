@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\xshad\\Desktop\\ParcialSegundoCOrte\\Entity\\Entity.csproj": {}
+    "C:\\Users\\xshad\\Desktop\\ParcialSegundoCOrte\\Entity\\Entity.csproj": {}
   },
   "projects": {
-    "c:\\Users\\xshad\\Desktop\\ParcialSegundoCOrte\\Entity\\Entity.csproj": {
+    "C:\\Users\\xshad\\Desktop\\ParcialSegundoCOrte\\Entity\\Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\xshad\\Desktop\\ParcialSegundoCOrte\\Entity\\Entity.csproj",
+        "projectUniqueName": "C:\\Users\\xshad\\Desktop\\ParcialSegundoCOrte\\Entity\\Entity.csproj",
         "projectName": "Entity",
-        "projectPath": "c:\\Users\\xshad\\Desktop\\ParcialSegundoCOrte\\Entity\\Entity.csproj",
+        "projectPath": "C:\\Users\\xshad\\Desktop\\ParcialSegundoCOrte\\Entity\\Entity.csproj",
         "packagesPath": "C:\\Users\\xshad\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\xshad\\Desktop\\ParcialSegundoCOrte\\Entity\\obj\\",
+        "outputPath": "C:\\Users\\xshad\\Desktop\\ParcialSegundoCOrte\\Entity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

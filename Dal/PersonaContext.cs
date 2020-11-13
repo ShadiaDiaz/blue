@@ -8,7 +8,7 @@ namespace Dal
     public class PersonaContext:DbContext
     {
 
-        public EmergenciaContext(DbContextOptions options):base(options)
+        public PersonaContext(DbContextOptions options):base(options)
         {
             
         } 
@@ -16,13 +16,10 @@ namespace Dal
         public DbSet<Pago> Pagos { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-           
 
             modelBuilder.Entity<Pago>()
             .HasOne<Persona>().WithMany()
             .HasForeignKey(p => p.PersonaId, p=> p.NombrePersona);
-
-           
 
         }
     }
