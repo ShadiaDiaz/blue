@@ -1,6 +1,8 @@
 export class Pago {
     tipoPago: string;
-    fechaPago: Date;
+    fechaPago: string;
     valorPago: number;
     valorIva: number;
+    pagoTotal: number;
+    
 }

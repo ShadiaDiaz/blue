@@ -24,6 +24,8 @@ namespace Bll
                 if (_context.Personas.Find(persona.Identificacion) == null)
                 {
                  
+                       _context.Persona.Add(persona);
+                       _context.SaveChanges();
                        mensaje = "Persona Registrada Exitosamente"
                         return new GuardarPersonaResponse(mensaje, "Gracias!!");
                     
@@ -43,11 +45,11 @@ namespace Bll
 
         public PersonaConsultaResponse Consultar()
         {
-            List<Persona> personas = new List<Persona>();
+            
             try
             {
                
-                return new PersonaConsultaResponse(personas);
+                return new PersonaConsultaResponse(_context.Persona.ToList());
             }
             catch (Exception e)
             {
