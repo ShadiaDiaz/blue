@@ -7,7 +7,6 @@ namespace parcialSegundo.Modals
     public class PagoInputModels
     {
         public string PersonaId {get;set;}
-        public string NombrePersona {get;set;}
           public string Cod {get;set;}
          public string TipoPago  {get; set; }
          public DateTime FechaPago { get; set; }
@@ -27,7 +26,6 @@ namespace parcialSegundo.Modals
         public pagoViewModel(Pago pago)
         {
             PersonaId = pago.PersonaId
-            NombrePersona = pago.NombrePersona;
             Cod = pago.Cod;
             TipoPago = pago.TipoPago;
             FechaPago = pago.FechaPago;

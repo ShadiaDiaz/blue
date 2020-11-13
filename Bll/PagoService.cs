@@ -9,9 +9,9 @@ namespace Bll
 {
     public class PagoService
     {
-        private readonly PersonaContext _context;
-
-        public PagoService(PersonaContext context)
+        private readonly ParcialContext _context;
+        var Pagoresponse;
+        public PagoService(ParcialContext context)
         {
             _context = context;
         }
@@ -21,7 +21,7 @@ namespace Bll
             string mensaje = "";
             try
             {
-                if (_context.Pago.Find(pago.null) == null)
+                if (_context.Pago.Find(pago.Cod) == null)
                 {
                          _context.Pago.Add(pago);
                          _context.SaveChanges();
@@ -30,7 +30,7 @@ namespace Bll
                 }
                 else
                 {
-                    mensaje = "Error: La persona ya se encuentra registrada. ";
+                    mensaje = "Error: El pago ya se encuentra registrada. ";
                     return new GuardarPagoResponse(mensaje, "Duplicado");
                 }
             }
@@ -40,11 +40,7 @@ namespace Bll
             }
         }
 
-        public decimal TotalPagos()
-        {
-            decimal suma = _context.Pago.Include(p => p.Pago).ToList().Sum(p => p.Pago.TotalPagos);
-            return suma;
-        }
+      
 
         
 
@@ -53,42 +49,45 @@ namespace Bll
             List<Pago> pagos = new List<Pago>();
             try
             {
-                return new PersonaConsultaResponse(pagos);
+                return new PagoConsultaResponse(pagos);
             }
             catch (Exception e)
             {
-                return new PersonaConsultaResponse($"Error en la aplicacion: {e.Message}");
+                return new PagoConsultaResponse($"Error en la aplicacion: {e.Message}");
             }
         }
+
+
           public BuscarPagoResponse BuscarPago(string numero)
         {
             try
             {
-              
-                var pagoresponse = solicitudesresponse.Find(s => s.Numero == numero);
-                if(pagoresponse != null)
+               
+                var Pagoresponse = Pagoresponse.Find(s => s.Numero == numero);
+                if(Pagoresponse != null)
                 {
-                    pagoresponse.Persona = _context.Personas.Find(pagoresponse.Identificacion);
-                
-                    return new BuscarSolicitudResponse(pagoresponse);
+                    
+                    Pagoresponse.Persona = _context.Personas.Find(Pagoresponse.PersonaId);
+                    
+                    return new BuscarPagoResponse(Pagoresponse);
                 }
                 else
                 {
-                    return new BuscarSolicitudResponse($"No existe");
+                    return new BuscarPagoResponse($"No existe");
                 }
             }
             catch(Exception e)
             {
-                return new BuscarSolicitudResponse($"Error: {e.Message}");
+                return new BuscarPagoResponse($"Error: {e.Message}");
             }
         }
         public class GuardarPagoResponse
         {
-            public GuardarPagoResponse(string mensaje, Persona persona)
+            public GuardarPagoResponse(string mensaje, Pago pago)
             {
                 Error = false;
                 Mensaje = mensaje;
-                Persona = persona;
+                Pago = pago;
             }
 
             public GuardarPagoResponse(string mensaje, string tipoerror)
@@ -100,9 +99,25 @@ namespace Bll
             public bool Error { get; set; }
             public string TipoRespuesta { get; set; }
             public string Mensaje { get; set; }
-            public Persona Persona { get; set; }
+            public Pago Pago { get; set; }
         }
+  public class BuscarPagoResponse
+        {
+            public BuscarPagoResponse(Pago pago)
+            {
+                Error = false;
+                Pago = pago;
+            }
 
+            public BuscarPagoResponse(string mensaje)
+            {
+                Error = true;
+                Mensaje = mensaje;
+            }
+            public bool Error { get; set; }
+            public string Mensaje { get; set; }
+            public Pago Pago { get; set; }
+        }
         public class PagoConsultaResponse
         {
             public PagoConsultaResponse(List<Pago> pagos)

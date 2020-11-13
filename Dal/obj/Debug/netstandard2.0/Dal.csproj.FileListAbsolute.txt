@@ -7,3 +7,6 @@ C:\Users\xshad\Desktop\ParcialSegundoCOrte\Dal\obj\Debug\netstandard2.0\Dal.Asse
 C:\Users\xshad\Desktop\ParcialSegundoCOrte\Dal\obj\Debug\netstandard2.0\Dal.csproj.CoreCompileInputs.cache
 C:\Users\xshad\Desktop\ParcialSegundoCOrte\Dal\obj\Debug\netstandard2.0\Dal.dll
 C:\Users\xshad\Desktop\ParcialSegundoCOrte\Dal\obj\Debug\netstandard2.0\Dal.pdb
+C:\Users\xshad\Desktop\ParcialSegundoCOrte\Dal\bin\Debug\netstandard2.0\Entity.dll
+C:\Users\xshad\Desktop\ParcialSegundoCOrte\Dal\bin\Debug\netstandard2.0\Entity.pdb
+C:\Users\xshad\Desktop\ParcialSegundoCOrte\Dal\obj\Debug\netstandard2.0\Dal.csproj.CopyComplete

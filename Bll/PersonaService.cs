@@ -1,17 +1,18 @@
-using System;
+
+
+namespace Bll
+{
+    using System;
 using Entity;
 using Dal;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
-
-namespace Bll
-{
     public class PersonaService
     {
-        private readonly PersonaContext _context;
+        private readonly ParcialContext _context;
 
-        public PersonaService(PersonaContext context)
+        public PersonaService(ParcialContext context)
         {
             _context = context;
         }
@@ -26,7 +27,7 @@ namespace Bll
                  
                        _context.Persona.Add(persona);
                        _context.SaveChanges();
-                       mensaje = "Persona Registrada Exitosamente"
+                       mensaje = "Persona Registrada Exitosamente";
                         return new GuardarPersonaResponse(mensaje, "Gracias!!");
                     
                    

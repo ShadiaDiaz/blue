@@ -5,6 +5,13 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Dal;
+using Microsoft.EntityFrameworkCore;
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
+using System;
 
 namespace parcialSegundo
 {
@@ -28,6 +35,35 @@ namespace parcialSegundo
             });
         }
 
+
+
+           string connectionString = Configuration["ConnectionStrings:DefaultConnection"];
+            services.AddDbContext<ParcialContext>(Context => Context.UseSqlServer(connectionString));
+
+
+
+          services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "School API",
+                    Description = "School API - ASP.NET Core Web API",
+                    TermsOfService = new Uri("https://cla.dotnetfoundation.org/"),
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Unicesar",
+                        Email = string.Empty,
+                        Url = new Uri("https://github.com/borisgr04/CrudNgDotNetCore3"),
+                    },
+                    License = new OpenApiLicense
+                    {
+                        Name = "Licencia dotnet foundation",
+                        Url = new Uri("https://www.byasystems.co/license"),
+                    }
+                });
+            
+            });
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -56,6 +92,11 @@ namespace parcialSegundo
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller}/{action=Index}/{id?}");
+            });
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
             });
 
             app.UseSpa(spa =>

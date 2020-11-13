@@ -63,7 +63,6 @@ namespace parcialSegundo.Controllers
             var pago = new Pago
             { 
                      PersonaId = pagoInput.PersonaId
-                     NombrePersona = pagoInput.NombrePersona;
                      Cod = pagoInput.Cod;
                      TipoPago = pagoInput.TipoPago;
                      FechaPago = pagoInput.FechaPago;

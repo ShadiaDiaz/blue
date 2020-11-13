@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { FilterPipePipe } from './pipe/filter-pipe.pipe';
 import { PagoRegistroComponent } from './Parcial/pago-registro/pago-registro.component';
 import { PagoConsultaComponent } from './Parcial/pago-consulta/pago-consulta.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PagoConsultaComponent } from './Parcial/pago-consulta/pago-consulta.com
     PersonaRegistroComponent,
     FilterPipePipe,
     PagoRegistroComponent,
-    PagoConsultaComponent
+    PagoConsultaComponent,
+    FooterComponent
   ],
   imports: [
     ReactiveFormsModule,

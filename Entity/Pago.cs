@@ -3,7 +3,6 @@ namespace Entity
     public class Pago
     {
          public string PersonaId {get;set;}
-         public string NombrePersona {get;set;}
          public string Cod {get;set;}
          public string TipoPago  {get; set; }
          public string FechaPago { get; set; }
