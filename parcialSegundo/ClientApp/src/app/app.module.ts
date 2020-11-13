@@ -16,6 +16,7 @@ import { FilterPipePipe } from './pipe/filter-pipe.pipe';
 import { PagoRegistroComponent } from './Parcial/pago-registro/pago-registro.component';
 import { PagoConsultaComponent } from './Parcial/pago-consulta/pago-consulta.component';
 import { FooterComponent } from './footer/footer.component';
+import { AlertModalComponent } from './@base/alert-modal/alert-modal.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FooterComponent } from './footer/footer.component';
     FilterPipePipe,
     PagoRegistroComponent,
     PagoConsultaComponent,
-    FooterComponent
+    FooterComponent,
+    AlertModalComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -43,6 +45,8 @@ import { FooterComponent } from './footer/footer.component';
     ]),
     AppRoutingModule
   ],
+  entryComponents:[AlertModalComponent],
+
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { persona } from './../models/persona';
-import { FormGroup, FormBuilder, Validators, AbstractControl} from '@angular/forms';
 
 @Component({
   selector: 'app-persona-registro',
@@ -9,16 +7,9 @@ import { FormGroup, FormBuilder, Validators, AbstractControl} from '@angula
 })
 export class PersonaRegistroComponent implements OnInit {
 
-   persona: persona;
-   formGroup: FormGroup;
+  constructor() { }
 
-  constructor(private formBuilder: FormBuilder) { }
-
-  ngOnInit(): void {
-    this.buildForm();
+  ngOnInit() {
   }
-   private buildForm() {
-          this.formGroup = this.formBuilder.group({ });
-      }
-    
+
 }

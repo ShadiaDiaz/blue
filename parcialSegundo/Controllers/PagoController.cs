@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Entity;
 using Dal;
-using parcialSegundo.Modals;
+using parcialSegundo.Models;
 using Microsoft.AspNetCore.Http;
 
 namespace parcialSegundo.Controllers
@@ -16,13 +16,13 @@ namespace parcialSegundo.Controllers
     public class PagoController : ControllerBase
     {
         private readonly PagoService service;
-        public PagoController(PagoContext context)
+        public PagoController(ParcialesContext context)
         {
             service = new PagoService(context);
         }
         // POST: api/Asignatura​s
         [HttpPost]
-        public ActionResult<PagoViewModel> Post(PagoInputModel pagoInput)
+        public ActionResult<PagoViewModel> Post(PagoInputModels pagoInput)
         {
             Pago pago = MapearPago(pagoInput);
             var response = service.GuardarPago(pago);
@@ -47,7 +47,7 @@ namespace parcialSegundo.Controllers
         [HttpGet]
         public ActionResult<PagoViewModel> Get()
         {
-            var response = service.ConsultarPago();
+            var response = service.PagoConsulta();
 
             if(response.Error)
             {
@@ -58,17 +58,17 @@ namespace parcialSegundo.Controllers
 
 
 
-        private Pagos MapearPago(PagoInputModel pagoInput)
+        private Pago MapearPago(PagoInputModels pagoInput)
         {
             var pago = new Pago
             { 
-                     PersonaId = pagoInput.PersonaId
-                     Cod = pagoInput.Cod;
-                     TipoPago = pagoInput.TipoPago;
-                     FechaPago = pagoInput.FechaPago;
-                     ValorPago = pagoInput.ValorPago;
-                     ValorIva = pagoInput.ValorIva;
-                     PagoTotal = pagoInput.PagoTotal;
+                     PersonaId = pagoInput.PersonaId,
+                     Cod = pagoInput.Cod,
+                     TipoPago = pagoInput.TipoPago,
+                     FechaPago = DateTime.Parse(pagoInput.FechaPago),
+                     ValorPago = pagoInput.ValorPago,
+                     ValorIva = pagoInput.ValorIva,
+                     PagoTotal = pagoInput.PagoTotal
             };
             return pago;
         }

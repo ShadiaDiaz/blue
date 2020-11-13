@@ -9,6 +9,26 @@
 
                 <form [formGroup]="formGroup">
 
+
+
+                    <div class="form-group">​
+
+                        <label>Tipo de Documento</label>​
+                        <select class="form-control"
+                            [ngClass]="{'is-invalid': control.tipoDocumento.errors && control.tipoDocumento.touched}"
+                            formControlName="tipoDocumento" name="tipoDocumento" id="sexo">
+                            <option>CC</option>
+                            <option>Nit</option>
+                        </select>
+                        ​<div *ngIf="control.tipoDocumento.errors" class="invalid-feedback">
+                            <div *ngIf="control.tipoDocumento.errors.required">Se requiere el tipo de documento</div>
+                        </div>
+
+                    </div>
+                    </div>
+
+
+
                     <div class="form-group">​
 
                         <label>Identificacion</label>​
@@ -24,54 +44,31 @@
                     ​
                     <div class="form-group">​
 
-                        <label>Nombre</label>​
+                        <label>Nombres</label>​
 
                         <input type="text" name="nombre"
-                            [ngClass]="{'is-invalid': control.nombre.errors && control.nombre.touched}"
-                            formControlName="nombre" class="form-control" required />​
-                        <div *ngIf="control.nombre.errors" class="invalid-feedback">
-                            <div *ngIf="control.nombre.errors.required">Se requiere el nombre</div>
+                            [ngClass]="{'is-invalid': control.nombre.errors && control.nombres.touched}"
+                            formControlName="nombres" class="form-control" required />​
+                        <div *ngIf="control.nombres.errors" class="invalid-feedback">
+                            <div *ngIf="control.nombres.errors.required">Se requiere el nombre</div>
                         </div>
                     </div>
 
-                    <div class="form-group">​
-
-                        <label>Apellidos</label>​
-
-                        <input type="text" name="apellido"
-                            [ngClass]="{'is-invalid': control.apellidos.errors && control.apellidos.touched}"
-                            formControlName="apellidos" class="form-control" required />​
-                        <div *ngIf="control.apellidos.errors" class="invalid-feedback">
-                            <div *ngIf="control.apellidos.errors.required">Se requiere el apellido</div>
-                        </div>
-                    </div>
+                   
                     ​
 
-                    <div class="form-group">​
+              ​
 
-                        <label>sexo</label>​
-                        <select class="form-control"
-                            [ngClass]="{'is-invalid': control.sexo.errors && control.sexo.touched}"
-                            formControlName="sexo" name="sexo" id="sexo">
-                            <option>Femenino</option>
-                            <option>Masculino</option>
-                        </select>
-                        ​<div *ngIf="control.sexo.errors" class="invalid-feedback">
-                            <div *ngIf="control.sexo.errors.required">Se requiere la modalidad</div>
-                        </div>
-
-                    </div>​
+                 
 
                     <div class="form-group">​
-
-                        <label>Edad</label>​
-
-                        <input type="number" name="edad"
-                            [ngClass]="{'is-invalid': control.edad.errors && control.edad.touched}"
-                            formControlName="edad" class="form-control" required />​
-                        <div *ngIf="control.edad.errors" class="invalid-feedback">
-                            <div *ngIf="control.edad.errors.required">Se requiere el edad</div>
-                        </div>
+                        <label>Pais</label>​
+                        <input type="text"
+                            [ngClass]="{'is-invalid': control2.pais.errors && control2.pais.touched}"
+                            name="pais" formControlName="pais" class="form-control" required />
+                        <div *ngIf="control2.pais.errors" class="invalid-feedback">
+                            <div *ngIf="control2.pais.errors.required">Se requiere el pais</div>
+                        </div>​
                     </div>​
 
 
@@ -92,41 +89,6 @@
                         <div *ngIf="control.ciudad.errors" class="invalid-feedback">
                             <div *ngIf="control.ciudad.errors.required">Se requiere el ciudad</div>
                         </div>​
-                    </div>
-
-                </form>
-
-                <form [formGroup]="formGroup2">
-                    <div class="form-group">​
-                        <label>Valor del Apoyo</label>​
-                        <input type="number"
-                            [ngClass]="{'is-invalid': control2.valorApoyo.errors && control2.valorApoyo.touched}"
-                            name="valorApoyo" formControlName="valorApoyo" class="form-control" required />
-                        <div *ngIf="control2.valorApoyo.errors" class="invalid-feedback">
-                            <div *ngIf="control2.valorApoyo.errors.required">Se requiere el valorApoyo</div>
-                        </div>​
-                    </div>
-
-                    <div class="form-group">​
-                        <label>Modalidad Apoyo</label>​
-                        <select class="form-control"
-                            [ngClass]="{'is-invalid': control2.modalidadApoyo.errors && control2.modalidadApoyo.touched}"
-                            formControlName="modalidadApoyo" name="modalidadApoyo" id="modalidadApoyo">
-                            <option selected>Seleccionar</option>
-                            <option>alimentario</option>
-                            <option>económico</option>
-                        </select>
-                        <div *ngIf="control2.modalidadApoyo.errors" class="invalid-feedback">
-                            <div *ngIf="control2.modalidadApoyo.errors.required">Se requiere la modalidadApoyo</div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Fecha Entrega</label>
-                        <input type="date" id="fecha" name="fecha" class="form-control" formControlName="fecha">
-                        <div *ngIf="control2.fecha.errors" class="invalid-feedback">
-                            <div *ngIf="control2.fecha.errors.required">Se requiere la fecha</div>
-                        </div>
                     </div>
 
                 </form>

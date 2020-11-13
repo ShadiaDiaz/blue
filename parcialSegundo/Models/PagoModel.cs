@@ -2,7 +2,7 @@ using System;
 using Entity;
 
 
-namespace parcialSegundo.Modals
+namespace parcialSegundo.Models
 {
     public class PagoInputModels
     {
@@ -23,9 +23,9 @@ namespace parcialSegundo.Modals
 
         }
 
-        public pagoViewModel(Pago pago)
+        public PagoViewModel(Pago pago)
         {
-            PersonaId = pago.PersonaId
+            PersonaId = pago.PersonaId;
             Cod = pago.Cod;
             TipoPago = pago.TipoPago;
             FechaPago = pago.FechaPago;

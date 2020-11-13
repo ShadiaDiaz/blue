@@ -9,9 +9,9 @@ namespace Bll
 {
     public class PagoService
     {
-        private readonly ParcialContext _context;
-        var Pagoresponse;
-        public PagoService(ParcialContext context)
+        private readonly ParcialesContext _context;
+       
+        public PagoService(ParcialesContext context)
         {
             _context = context;
         }
@@ -40,10 +40,6 @@ namespace Bll
             }
         }
 
-      
-
-        
-
         public PagoConsultaResponse Consultar()
         {
             List<Pago> pagos = new List<Pago>();
@@ -58,29 +54,7 @@ namespace Bll
         }
 
 
-          public BuscarPagoResponse BuscarPago(string numero)
-        {
-            try
-            {
-               
-                var Pagoresponse = Pagoresponse.Find(s => s.Numero == numero);
-                if(Pagoresponse != null)
-                {
-                    
-                    Pagoresponse.Persona = _context.Personas.Find(Pagoresponse.PersonaId);
-                    
-                    return new BuscarPagoResponse(Pagoresponse);
-                }
-                else
-                {
-                    return new BuscarPagoResponse($"No existe");
-                }
-            }
-            catch(Exception e)
-            {
-                return new BuscarPagoResponse($"Error: {e.Message}");
-            }
-        }
+          
         public class GuardarPagoResponse
         {
             public GuardarPagoResponse(string mensaje, Pago pago)
@@ -101,23 +75,7 @@ namespace Bll
             public string Mensaje { get; set; }
             public Pago Pago { get; set; }
         }
-  public class BuscarPagoResponse
-        {
-            public BuscarPagoResponse(Pago pago)
-            {
-                Error = false;
-                Pago = pago;
-            }
-
-            public BuscarPagoResponse(string mensaje)
-            {
-                Error = true;
-                Mensaje = mensaje;
-            }
-            public bool Error { get; set; }
-            public string Mensaje { get; set; }
-            public Pago Pago { get; set; }
-        }
+  
         public class PagoConsultaResponse
         {
             public PagoConsultaResponse(List<Pago> pagos)

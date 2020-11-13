@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Entity;
 using Dal;
-using parcialSegundo.Modals;
+using parcialSegundo.Models;
 using Microsoft.AspNetCore.Http;
 
 namespace parcialSegundo.Controllers
@@ -16,34 +16,35 @@ namespace parcialSegundo.Controllers
     public class PersonaController : ControllerBase
     {
         private readonly PersonaService service;
-        public PersonaController(PersonaContext context)
+        public PersonaController(ParcialesContext context)
         {
             service = new PersonaService(context);
         }
-        // POST: api/Asignatura​s
+        // POST: api/Persona
         [HttpPost]
-        public ActionResult<PersonaViewModel> Post(PersonaInputModel personaInput)
+        public ActionResult<PersonaViewModel> Post(PersonaInputModels personaInput)
         {
             Persona persona = MapearPersona(personaInput);
             var response = service.GuardarPersona(persona);
             if(response.Error)
             {
-                ModelState.AddModelError("Error al guardar persona", response.Mensaje);
-                var detallesproblemas = new ValidationProblemDetails(ModelState);
-            if (response.Mensaje == "Duplicado")
-            {
-                detallesproblemas.Status = StatusCodes.Status400BadRequest;
+                       ModelState.AddModelError("Error al guardar persona", response.Mensaje);
+                       var detallesproblemas = new ValidationProblemDetails(ModelState);
+                        if (response.Mensaje == "Duplicado")
+                        {
+                             detallesproblemas.Status = StatusCodes.Status400BadRequest;
+                        }
             }
             else
-            {
+                    {
                 detallesproblemas.Status = StatusCodes.Status500InternalServerError;
-            }
+                     
                 return BadRequest(detallesproblemas);
             }
             return Ok(response.Persona);
         }
 
-        //api/Personas
+        //api/Persona
         [HttpGet]
         public ActionResult<PersonaViewModel> Get()
         {
@@ -58,18 +59,18 @@ namespace parcialSegundo.Controllers
 
 
 
-        private Personas MapearPersona(PersonaInputModel personaInput)
+        private Persona MapearPersona(PersonaInputModels personaInput)
         {
             var persona = new Persona
             { 
-                 TipoDocumento = personaInput.TipoDocumento
-                 Identificacion = personaInput.Identificacion;
-                 Nombres = personaInput.Nombres;
-                 Direccion = personaInput.Direccion;
-                 Telefono = personaInput.Telefono;
-                 Pais = personaInput.Pais;
-                 Departamento = personaInput.Departamento;
-                 Ciudad = personaInput.Ciudad;
+                 TipoDocumento = personaInput.TipoDocumento,
+                 Identificacion = personaInput.Identificacion,
+                 Nombres = personaInput.Nombres,
+                 Direccion = personaInput.Direccion,
+                 Telefono = personaInput.Telefono,
+                 Pais = personaInput.Pais,
+                 Departamento = personaInput.Departamento,
+                 Ciudad = personaInput.Ciudad,
             };
             return persona;
         }

@@ -2,3 +2,13 @@ C:\Users\xshad\Desktop\ParcialSegundoCOrte\Bll\obj\Debug\netstandard2.0\Bll.cspr
 C:\Users\xshad\Desktop\ParcialSegundoCOrte\Bll\obj\Debug\netstandard2.0\Bll.AssemblyInfoInputs.cache
 C:\Users\xshad\Desktop\ParcialSegundoCOrte\Bll\obj\Debug\netstandard2.0\Bll.AssemblyInfo.cs
 C:\Users\xshad\Desktop\ParcialSegundoCOrte\Bll\obj\Debug\netstandard2.0\Bll.csproj.CoreCompileInputs.cache
+C:\Users\xshad\Desktop\ParcialSegundoCOrte\Bll\bin\Debug\netstandard2.0\Bll.deps.json
+C:\Users\xshad\Desktop\ParcialSegundoCOrte\Bll\bin\Debug\netstandard2.0\Bll.dll
+C:\Users\xshad\Desktop\ParcialSegundoCOrte\Bll\bin\Debug\netstandard2.0\Bll.pdb
+C:\Users\xshad\Desktop\ParcialSegundoCOrte\Bll\bin\Debug\netstandard2.0\Dal.dll
+C:\Users\xshad\Desktop\ParcialSegundoCOrte\Bll\bin\Debug\netstandard2.0\Entity.dll
+C:\Users\xshad\Desktop\ParcialSegundoCOrte\Bll\bin\Debug\netstandard2.0\Dal.pdb
+C:\Users\xshad\Desktop\ParcialSegundoCOrte\Bll\bin\Debug\netstandard2.0\Entity.pdb
+C:\Users\xshad\Desktop\ParcialSegundoCOrte\Bll\obj\Debug\netstandard2.0\Bll.csproj.CopyComplete
+C:\Users\xshad\Desktop\ParcialSegundoCOrte\Bll\obj\Debug\netstandard2.0\Bll.dll
+C:\Users\xshad\Desktop\ParcialSegundoCOrte\Bll\obj\Debug\netstandard2.0\Bll.pdb

@@ -1,18 +1,17 @@
 
-
 namespace Dal
 {
      using System;
 using Entity;
 using Microsoft.EntityFrameworkCore;   
-    public class ParcialContext:DbContext
+    public class ParcialesContext:DbContext
     {
 
-        public ParcialContext(DbContextOptions options):base(options)
+        public ParcialesContext(DbContextOptions options):base(options)
         {
             
         } 
-        public DbSet<Persona> Personas { get; set; }
+        public DbSet<Persona> Persona { get; set; }
         public DbSet<Pago> Pago { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

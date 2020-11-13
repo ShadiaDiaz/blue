@@ -2,7 +2,7 @@ using System;
 using Entity;
 
 
-namespace parcialSegundo.Modals
+namespace parcialSegundo.Models
 {
     public class PersonaInputModels
     {
@@ -10,7 +10,7 @@ namespace parcialSegundo.Modals
          public string Identificacion { get; set; }
          public string Nombres { get; set; }
          public string Direccion { get; set; }
-         public number Telefono { get; set; }
+         public int Telefono { get; set; }
          public string Pais { get; set; }
          public string Departamento { get; set; }
          public string Ciudad { get; set; }
@@ -26,7 +26,7 @@ namespace parcialSegundo.Modals
 
         public PersonaViewModel(Persona persona)
         {
-            TipoDocumento = persona.TipoDocumento
+            TipoDocumento = persona.TipoDocumento;
             Identificacion = persona.Identificacion;
             Nombres = persona.Nombres;
             Direccion = persona.Direccion;

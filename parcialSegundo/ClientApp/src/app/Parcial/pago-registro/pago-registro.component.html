@@ -46,48 +46,57 @@
                             <div *ngIf="control.cod.errors" class="invalid-feedback">
                                 <div *ngIf="control.cod.errors.required">ya se encuentra registrado</div>
 
-                                <div *ngIf="control.fecha.errors.validadFecha">{{control.fecha.errors.messageFecha}}
+                                <div *ngIf="control.fecha.errors.validadFecha">{{control.cod.errors.messageFecha}}
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-group row col-md-10">
-                            <label>Asignatura</label>
+                            <label>Tipo de Pago</label>
                             <select class="form-control"
-                                [ngClass]="{'is-invalid': control.asignatura.errors && control.asignatura.touched}"
-                                formControlName="asignatura" name="asignatura" id="asignatura">
+                                [ngClass]="{'is-invalid': control.tipoPago.errors && control.tipoPago.touched}"
+                                formControlName="tipoPago" name="tipoPago" id="tipoPago">
                                 <option selected>Seleccionar</option>
-                                <option *ngFor="let asignatura of asignaturas; index as i">
-                                    {{asignatura.nombre}};{{asignatura.codigo}}</option>
+                                <option value="1">Gastos Administrativos</option>
+                                <option value="2"> Gastos Financieros</option>
+                                <option value="3">Gastos Legales</option>
+                                <option value="4">  Gastos de Viajes</option>
+                                <option value="5"> Transporte</option>
+                                <option value="6">  Honorarios</option>
+                                <option value="7">   Arrendamiento</option>
+                                <option value="8"> Impuestos</option>
+                                <option value="9">   Retenciones</option>
                             </select>
                             <div *ngIf="control.asignatura.errors" class="invalid-feedback">
-                                <div *ngIf="control.asignatura.errors.required">Se requiere una asignatura</div>
+                                <div *ngIf="control.asignatura.errors.required">Se requiere tipo de Pago</div>
                             </div>
                         </div>
 
                         <div class="form-group row col-md-10">
-                            <label>Hora</label>
-                            <input type="text" [ngClass]="{'is-invalid': control.hora.errors && control.hora.touched}"
-                                formControlName="hora" name="Hora" class="form-control" />
-                            <div *ngIf="control.hora.errors" class="invalid-feedback">
-                                <div *ngIf="control.hora.errors.required">Se requiere la hora</div>
-                                <div *ngIf="control.hora.errors.maxlength">Caracteres mayores a 20</div>
+                            <label>Fecha</label>
+                            <input type="datetime" [ngClass]="{'is-invalid': control.fechaPago.errors && control.fechaPago.touched}"
+                                formControlName="fechaPago" name="fechaPago" class="form-control" />
+                            <div *ngIf="control.fechaPago.errors" class="invalid-feedback">
+                                <div *ngIf="control.fechaPago.errors.required">Se requiere la fecha</div>
+                            </div>
+                        </div>
+                        <div class="form-group row col-md-10">
+                            <label>Valor de Pago</label>
+                            <input type="string" [ngClass]="{'is-invalid': control.valorPago.errors && control.valorPago.touched}"
+                                formControlName="valorPago" name="valorPago" class="form-control" />
+                            <div *ngIf="control.valorPago.errors" class="invalid-feedback">
+                                <div *ngIf="control.valorPago.errors.required">Se requiere el pago</div>
+                            </div>
+                        </div>
+                        <div class="form-group row col-md-10">
+                            <label>Valor de Iva</label>
+                            <input type="string" [ngClass]="{'is-invalid': control.valorIva.errors && control.valorIva.touched}"
+                                formControlName="valorIva" name="valorIva" class="form-control" />
+                            <div *ngIf="control.valorIva.errors" class="invalid-feedback">
+                                <div *ngIf="control.valorIva.errors.required">Se requiere el iva</div>
                             </div>
                         </div>
 
-                        <div class="form-group row col-md-10">
-                            <label>Monitor</label>
-                            <select class="mdb-select md-form"
-                                [ngClass]="{'is-invalid': control.monitor.errors && control.monitor.touched}"
-                                formControlName="monitor">
-                                <option value="" disabled selected>--Seleccionar--</option>
-                                <option value="1">Fernando Vega (7am-12pm)</option>
-                                <option value="2">Shadia Diaz (1:30pm-6:30pm)</option>
-                            </select>
-                            <div *ngIf="control.monitor.errors" class="invalid-feedback">
-                                <div *ngIf="control.monitor.errors.required">Se requiere el monitor</div>
-                            </div>
-                        </div>
 
                     </div>
                 </div>
