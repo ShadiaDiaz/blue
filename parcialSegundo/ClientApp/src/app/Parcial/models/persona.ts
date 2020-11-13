@@ -1,4 +1,10 @@
 export class Persona {
+    tipoDocumento: string
     identificacion: string;
-    nombre: string;
+    nombres: string;
+    direccion: string;
+    telefono:number;
+    pais: string;
+    departamento: string;
+    ciudad: string;
 }
