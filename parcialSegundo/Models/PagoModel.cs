@@ -9,10 +9,11 @@ namespace parcialSegundo.Models
         public string PersonaId {get;set;}
           public string Cod {get;set;}
          public string TipoPago  {get; set; }
-         public DateTime FechaPago { get; set; }
+         public string FechaPago { get; set; }
          public decimal ValorPago { get; set; }
          public decimal ValorIva { get; set; }
          public decimal PagoTotal { get; set; }
+          public Persona Persona { get; set; }
 
     }
 
@@ -32,6 +33,7 @@ namespace parcialSegundo.Models
             ValorPago = pago.ValorPago;
             ValorIva = pago.ValorIva;
             PagoTotal = pago.PagoTotal;
+            Persona = pago.Persona;
            
            
         }
