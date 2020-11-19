@@ -33,7 +33,6 @@ namespace parcialSegundo.Models
             ValorPago = pago.ValorPago;
             ValorIva = pago.ValorIva;
             PagoTotal = pago.PagoTotal;
-            Persona = pago.Persona;
            
            
         }

@@ -7,3 +7,12 @@ C:\Users\xshad\Desktop\ParcialSegundoCOrte\Entity\bin\Debug\netstandard2.0\Entit
 C:\Users\xshad\Desktop\ParcialSegundoCOrte\Entity\bin\Debug\netstandard2.0\Entity.pdb
 C:\Users\xshad\Desktop\ParcialSegundoCOrte\Entity\obj\Debug\netstandard2.0\Entity.dll
 C:\Users\xshad\Desktop\ParcialSegundoCOrte\Entity\obj\Debug\netstandard2.0\Entity.pdb
+C:\Users\norma\Desktop\ParcialSegundoCOrte\Entity\bin\Debug\netstandard2.0\Entity.deps.json
+C:\Users\norma\Desktop\ParcialSegundoCOrte\Entity\bin\Debug\netstandard2.0\Entity.dll
+C:\Users\norma\Desktop\ParcialSegundoCOrte\Entity\bin\Debug\netstandard2.0\Entity.pdb
+C:\Users\norma\Desktop\ParcialSegundoCOrte\Entity\obj\Debug\netstandard2.0\Entity.csprojAssemblyReference.cache
+C:\Users\norma\Desktop\ParcialSegundoCOrte\Entity\obj\Debug\netstandard2.0\Entity.AssemblyInfoInputs.cache
+C:\Users\norma\Desktop\ParcialSegundoCOrte\Entity\obj\Debug\netstandard2.0\Entity.AssemblyInfo.cs
+C:\Users\norma\Desktop\ParcialSegundoCOrte\Entity\obj\Debug\netstandard2.0\Entity.csproj.CoreCompileInputs.cache
+C:\Users\norma\Desktop\ParcialSegundoCOrte\Entity\obj\Debug\netstandard2.0\Entity.dll
+C:\Users\norma\Desktop\ParcialSegundoCOrte\Entity\obj\Debug\netstandard2.0\Entity.pdb

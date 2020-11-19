@@ -20,24 +20,18 @@ namespace parcialSegundo.Controllers
         {
             service = new PagoService(context);
         }
-        // POST: api/Asignatura​s
+        // POST: api/Pago
         [HttpPost]
         public ActionResult<PagoViewModel> Post(PagoInputModels pagoInput)
         {
             Pago pago = MapearPago(pagoInput);
-            var response = service.GuardarPago(pago);
-            if(response.Error)
+            var response = service.Guardar(pago);
+              if (response.Error)
             {
-                ModelState.AddModelError("Error al guardar pago", response.Mensaje);
+                ModelState.AddModelError("Error al guardar Pago", response.Mensaje);
                 var detallesproblemas = new ValidationProblemDetails(ModelState);
-            if (response.Mensaje == "Duplicado")
-            {
-                detallesproblemas.Status = StatusCodes.Status400BadRequest;
-            }
-            else
-            {
+
                 detallesproblemas.Status = StatusCodes.Status500InternalServerError;
-            }
                 return BadRequest(detallesproblemas);
             }
             return Ok(response.Pago);
@@ -47,7 +41,7 @@ namespace parcialSegundo.Controllers
         [HttpGet]
         public ActionResult<PagoViewModel> Get()
         {
-            var response = service.PagoConsulta();
+            var response = service.Consultar();
 
             if(response.Error)
             {
@@ -65,7 +59,7 @@ namespace parcialSegundo.Controllers
                      PersonaId = pagoInput.PersonaId,
                      Cod = pagoInput.Cod,
                      TipoPago = pagoInput.TipoPago,
-                     FechaPago = DateTime.Parse(pagoInput.FechaPago),
+                     FechaPago = pagoInput.FechaPago,
                      ValorPago = pagoInput.ValorPago,
                      ValorIva = pagoInput.ValorIva,
                      PagoTotal = pagoInput.PagoTotal

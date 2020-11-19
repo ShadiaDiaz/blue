@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
@@ -12,7 +12,6 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { PersonaConsultaComponent } from './Parcial/persona-consulta/persona-consulta.component';
 import { PersonaRegistroComponent } from './Parcial/persona-registro/persona-registro.component';
 import { AppRoutingModule } from './app-routing.module';
-import { FilterPipePipe } from './pipe/filter-pipe.pipe';
 import { PagoRegistroComponent } from './Parcial/pago-registro/pago-registro.component';
 import { PagoConsultaComponent } from './Parcial/pago-consulta/pago-consulta.component';
 import { FooterComponent } from './footer/footer.component';
@@ -27,7 +26,6 @@ import { AlertModalComponent } from './@base/alert-modal/alert-modal.component';
     FetchDataComponent,
     PersonaConsultaComponent,
     PersonaRegistroComponent,
-    FilterPipePipe,
     PagoRegistroComponent,
     PagoConsultaComponent,
     FooterComponent,
@@ -45,8 +43,7 @@ import { AlertModalComponent } from './@base/alert-modal/alert-modal.component';
     ]),
     AppRoutingModule
   ],
-  entryComponents:[AlertModalComponent],
-
+  entryComponents: [AlertModalComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

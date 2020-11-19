@@ -1,57 +1,49 @@
-<!-- Sidebar -->
-<div id="sidebar-container" class="sidebar-expanded d-none d-md-block">
-  <!-- d-* hiddens the Sidebar in smaller devices. Its itens can be kept on the Navbar 'Menu' -->
-  <!-- Bootstrap List Group -->
-  <ul class="list-group">
-    <!-- Separator with title -->
-    <li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
-      <small>MENU</small>
-    </li>
-    <div>
-
-      <a [routerLink]="['/Home']" class="list-group-item list-group-item-action bg-dark text-white">
-        <span class="menu-collapsed">Inicio</span>
-      </a>
-    </div>
-
-    <!-- /END Separator -->
-    <!-- Menu with submenu -->
-
-    <a href="#submenu1" data-toggle="collapse" aria-expanded="false"
-      class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
-      <div class="d-flex w-100 justify-content-start align-items-center">
-        <span class="fa fa-dashboard fa-fw mr-3"></span>
-        <span class="menu-collapsed">Pagos</span>
-        <span class="submenu-icon ml-auto"></span>
+<header>
+  <nav
+    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
+  >
+    <div class="container">
+      <a class="navbar-brand" [routerLink]="['/Home']">Parcial</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-label="Toggle navigation"
+        [attr.aria-expanded]="isExpanded"
+        (click)="toggle()"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse"
+        [ngClass]="{ show: isExpanded }"
+      >
+        <ul class="navbar-nav flex-grow">
+          <li
+            class="nav-item"
+            [routerLinkActive]="['link-active']"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <a class="nav-link text-dark" [routerLink]="['/Home']">Home</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="dropdown-item" [routerLink]="['/personaRegistro']"
+            >Registro Persona</a
+            >
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="dropdown-item" [routerLink]="['/pagoRegistro']"
+            >Registro Pago</a
+            >
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="dropdown-item" [routerLink]="['/pagoConsulta']"
+            >Consultar Pago</a
+            >
+          </li>
+        </ul>
       </div>
-    </a>
-    <a href="#submenu2" data-toggle="collapse" aria-expanded="false"
-      class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
-      <div class="d-flex w-100 justify-content-start align-items-center">
-        <span class="fa fa-dashboard fa-fw mr-3"></span>
-        <span class="menu-collapsed">Persona</span>
-        <span class="submenu-icon ml-auto"></span>
-      </div>
-    </a>
-
-    <!-- Submenu content -->
-    <div id='submenu1' class="collapse sidebar-submenu">
-
-      <a [routerLink]="['/PagoRegistro']" class="list-group-item list-group-item-action bg-dark text-white">
-        <span class="menu-collapsed">Registro Pagos</span>
-      </a>
     </div>
-    <a class="list-group-item list-group-item-action bg-dark text-white">
-      <span class="menu-collapsed" [routerLink]="['/PagoConsulta']">Consultar Pagos</span>
-    </a>
-
-    <div id='submenu2' class="collapse sidebar-submenu">
-      <a class="list-group-item list-group-item-action bg-dark text-white">
-        <span class="menu-collapsed" [routerLink]="['/PersonaConsulta']">Consultar Persona</span>
-      </a>
-
-    </div>
-
-
-  </ul><!-- List Group END-->
-</div><!-- sidebar-container END -->
+  </nav>
+</header>

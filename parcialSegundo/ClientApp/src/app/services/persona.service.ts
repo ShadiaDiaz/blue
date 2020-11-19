@@ -19,16 +19,16 @@ export class PersonaService {
 
   post(persona: Persona): Observable<Persona> {
     
-    return this.http.post<Persona>(this.baseUrl + 'api/Personas', persona).pipe(
+    return this.http.post<Persona>(this.baseUrl + 'api/Persona', persona).pipe(
       tap(_ => this.handleErrorService.log('datos enviados')),
       catchError(this.handleErrorService.handleError<Persona>('Registrar Persona', null))
     );
   }
 
-  get(): Observable<Persona[]> {
-    return this.http.get<Persona[]>(this.baseUrl + 'api/Persona').pipe(
+  get(identificacion: string): Observable<Persona[]> {
+    return this.http.get<Persona[]>(this.baseUrl + 'api/Persona' + identificacion).pipe(
       tap(_ => this.handleErrorService.log('Datos')),
-      catchError(this.handleErrorService.handleError<Persona[]>('Consulta Asignaturas', null))
+      catchError(this.handleErrorService.handleError<Persona[]>('Consulta Persona', null))
     );
   }
 }

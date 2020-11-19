@@ -21,18 +21,19 @@
                                         [ngClass]="{'is-invalid': control.identificacion.errors && control.identificacion.touched}"
                                         formControlName="identificacion" name="identificacion" class="form-control" />
                                     <div *ngIf="control.identificacion.errors" class="invalid-feedback">
-                                        <div *ngIf="control.identificacion.errors.required">Se requiere la identificacion
+                                        <div *ngIf="control.identificacion.errors.required">Se requiere la
+                                            identificacion
                                         </div>
-                                        <div *ngIf="control.identificacion.errors.maxlength">Caracteres mayores a 13</div>
+                                        <div *ngIf="control.identificacion.errors.maxlength">Caracteres mayores a 13
+                                        </div>
                                     </div>
-    
+
                                 </div>
-    
+
                             </div>
-    
+
                             <div class="form-group row">
-                                <button class="btn btn-primary mr-1" (click)="buscarpersona()"
-                                    >Buscar</button>
+                                <button class="btn btn-primary mr-1" (click)="buscarpersona()">Buscar</button>
                             </div>
                         </div>
 
@@ -60,21 +61,22 @@
                                 <option value="1">Gastos Administrativos</option>
                                 <option value="2"> Gastos Financieros</option>
                                 <option value="3">Gastos Legales</option>
-                                <option value="4">  Gastos de Viajes</option>
+                                <option value="4"> Gastos de Viajes</option>
                                 <option value="5"> Transporte</option>
-                                <option value="6">  Honorarios</option>
-                                <option value="7">   Arrendamiento</option>
+                                <option value="6"> Honorarios</option>
+                                <option value="7"> Arrendamiento</option>
                                 <option value="8"> Impuestos</option>
-                                <option value="9">   Retenciones</option>
+                                <option value="9"> Retenciones</option>
                             </select>
-                            <div *ngIf="control.asignatura.errors" class="invalid-feedback">
-                                <div *ngIf="control.asignatura.errors.required">Se requiere tipo de Pago</div>
+                            <div *ngIf="control.tipoPago.errors" class="invalid-feedback">
+                                <div *ngIf="control.tipoPago.errors.required">Se requiere tipo de Pago</div>
                             </div>
                         </div>
 
                         <div class="form-group row col-md-10">
                             <label>Fecha</label>
-                            <input type="datetime" [ngClass]="{'is-invalid': control.fechaPago.errors && control.fechaPago.touched}"
+                            <input type="datetime"
+                                [ngClass]="{'is-invalid': control.fechaPago.errors && control.fechaPago.touched}"
                                 formControlName="fechaPago" name="fechaPago" class="form-control" />
                             <div *ngIf="control.fechaPago.errors" class="invalid-feedback">
                                 <div *ngIf="control.fechaPago.errors.required">Se requiere la fecha</div>
@@ -82,7 +84,8 @@
                         </div>
                         <div class="form-group row col-md-10">
                             <label>Valor de Pago</label>
-                            <input type="string" [ngClass]="{'is-invalid': control.valorPago.errors && control.valorPago.touched}"
+                            <input type="string"
+                                [ngClass]="{'is-invalid': control.valorPago.errors && control.valorPago.touched}"
                                 formControlName="valorPago" name="valorPago" class="form-control" />
                             <div *ngIf="control.valorPago.errors" class="invalid-feedback">
                                 <div *ngIf="control.valorPago.errors.required">Se requiere el pago</div>
@@ -90,7 +93,8 @@
                         </div>
                         <div class="form-group row col-md-10">
                             <label>Valor de Iva</label>
-                            <input type="string" [ngClass]="{'is-invalid': control.valorIva.errors && control.valorIva.touched}"
+                            <input type="string"
+                                [ngClass]="{'is-invalid': control.valorIva.errors && control.valorIva.touched}"
                                 formControlName="valorIva" name="valorIva" class="form-control" />
                             <div *ngIf="control.valorIva.errors" class="invalid-feedback">
                                 <div *ngIf="control.valorIva.errors.required">Se requiere el iva</div>
@@ -100,14 +104,13 @@
 
                     </div>
                 </div>
-
-
-            <div class="text-center">
-                <button class="btn btn-primary mr-1" (click)="onSubmit()" [disabled]="formGroup.invalid"
-                    >Register</button>
-                <button class="btn btn-secondary" type="reset"
-                    style="background-color: rgb(247, 138, 138);">Cancel</button>
             </div>
         </form>
+        <div class="text-center">
+            <button class="btn btn-primary mr-1" (click)="onSubmit()" [disabled]="formGroup.invalid">Register</button>
+            <button class="btn btn-secondary" type="reset" style="background-color: rgb(247, 138, 138);">Cancel</button>
+        </div>
+
     </div>
 </div>
+

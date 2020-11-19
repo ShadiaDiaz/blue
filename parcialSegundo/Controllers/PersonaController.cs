@@ -26,19 +26,12 @@ namespace parcialSegundo.Controllers
         {
             Persona persona = MapearPersona(personaInput);
             var response = service.GuardarPersona(persona);
-            if(response.Error)
+          if (response.Error)
             {
-                       ModelState.AddModelError("Error al guardar persona", response.Mensaje);
-                       var detallesproblemas = new ValidationProblemDetails(ModelState);
-                        if (response.Mensaje == "Duplicado")
-                        {
-                             detallesproblemas.Status = StatusCodes.Status400BadRequest;
-                        }
-            }
-            else
-                    {
+                ModelState.AddModelError("Error al guardar Persona", response.Mensaje);
+                var detallesproblemas = new ValidationProblemDetails(ModelState);
+
                 detallesproblemas.Status = StatusCodes.Status500InternalServerError;
-                     
                 return BadRequest(detallesproblemas);
             }
             return Ok(response.Persona);

@@ -29,7 +29,7 @@ namespace parcialSegundo
 
 
             //configurar cadena
-            var connectionString = Configuration.GetConnectionString("DefaultConnection");
+            string connectionString = Configuration["ConectionStrings:DefaultConnection"];
             services.AddDbContext<ParcialesContext>(p => p.UseSqlServer(connectionString));
             //Agregar OpenApi Swagger
             services.AddSwaggerGen(c =>

@@ -40,16 +40,16 @@ namespace Bll
             }
         }
 
-        public PagoConsultaResponse Consultar()
+        public ConsultaPagoResponse Consultar()
         {
             List<Pago> pagos = new List<Pago>();
             try
             {
-                return new PagoConsultaResponse(pagos);
+                return new ConsultaPagoResponse(pagos);
             }
             catch (Exception e)
             {
-                return new PagoConsultaResponse($"Error en la aplicacion: {e.Message}");
+                return new ConsultaPagoResponse($"Error en la aplicacion: {e.Message}");
             }
         }
 
@@ -76,15 +76,15 @@ namespace Bll
             public Pago Pago { get; set; }
         }
   
-        public class PagoConsultaResponse
+        public class ConsultaPagoResponse
         {
-            public PagoConsultaResponse(List<Pago> pagos)
+            public ConsultaPagoResponse(List<Pago> pagos)
             {
                 Error = false;
                 Pago = pagos;
             }
 
-            public PagoConsultaResponse(string mensaje)
+            public ConsultaPagoResponse(string mensaje)
             {
                 Error = true;
                 Mensaje = mensaje;

@@ -51,6 +51,43 @@ namespace Bll
                 return new ConsultarPersonaResponse($"Error en la aplicacion: {e.Message}");
             }
         }
+        public BuscarPersonaResponse BuscarPersona(string id)
+        {
+            try
+            {
+                var response = _context.Persona.Find(id);
+                if(response == null)
+                {
+                    return new BuscarPersonaResponse($"No existe");
+                }
+                else
+                {
+                    return new BuscarPersonaResponse(response);
+                }
+                
+            }
+            catch(Exception e)
+            {
+                return new BuscarPersonaResponse($"Error: {e.Message}");
+            }
+        }
+         public class BuscarPersonaResponse
+        {
+            public BuscarPersonaResponse(Persona persona)
+            {
+                Error = false;
+                Persona = persona;
+            }
+
+            public BuscarPersonaResponse(string mensaje)
+            {
+                Error = true;
+                Mensaje = mensaje;
+            }
+            public bool Error { get; set; }
+            public string Mensaje { get; set; }
+            public Persona Persona { get; set; }
+        }
 
         public class ConsultarPersonaResponse
         {

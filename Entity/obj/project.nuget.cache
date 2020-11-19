@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "iNKVoGfr4xYOHy0eyl05ycDgvbs1r1St1MBxbS1AjhhyVv4yZ3S8pHCU3ZfyHgZgE9y59k9NVex5MQV8hB4wvQ==",
+  "dgSpecHash": "8762IcNDRsmj4/RhSnp1tzM0P+lqgRPJKewfVRk0jLfc6AMQuxZM68Op2pTxFO74qt46zl58JbGgxAHerZCo2A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\xshad\\Desktop\\ParcialSegundoCOrte\\Entity\\Entity.csproj",
+  "projectFilePath": "C:\\Users\\norma\\Desktop\\ParcialSegundoCOrte\\Entity\\Entity.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\xshad\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\xshad\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
-    "C:\\Users\\xshad\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512"
+    "C:\\Users\\norma\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\norma\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\norma\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512"
   ],
   "logs": []
 }
